@@ -16,7 +16,7 @@ class research_dir():
         if path:
             self.proj_path = path
         else:
-            self.proj_path = os.path.join(os.path.abspath(os.path.join(os.path.abspath(os.path.dirname('README.md')),'..')),proj_name)
+            self.proj_path = os.path.join(os.path.abspath(os.path.join(os.path.abspath(os.path.dirname('__file__')),'..')),proj_name)
          
     def show_dir(self, path=None, depth=0):
         '''
