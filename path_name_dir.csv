@@ -1,0 +1,23 @@
+level1,level2,level3,level4,purpose
+to_file,,,,file to examine and move to appropriate location
+administration,proposal,,,grant proposal and related materials
+documentation,codebooks,,,codebooks for source and constructed variables
+documentation,data_clean_log,,,log for data clean
+documentation,data_analysis_log,,,log for data clean
+hold_then_delete,,,,delete when project is complete
+posted,datasets,deried,,dataset constructed from original data
+posted,datasets,source,,original data without modifications
+posted,text,,,completed drafts of paper
+posted,operation,data_clean,,clean data and variable construction
+posted,operation,data_describ,,descriptive statistics and sample selection
+posted,operation,panelmodels,model1,panel models for discriminations
+posted,fig_tables,,,results graph and table of data
+readings,,,,file to examine and move to appropriate location
+work,to_do,,,work that hasn\'t been started
+work,datasets,deried,,dataset constructed from original data
+work,datasets,source,,original data without modifications
+work,text,,,completed drafts of paper
+work,operation,data_clean,,clean data and variable construction
+work,operation,data_describ,,descriptive statistics and sample selection
+work,operation,panelmodels,model1,panel models for discriminations
+work,fig_tables,,,results graph and table of data
