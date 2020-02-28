@@ -6,17 +6,30 @@ import pandas as pd
 import numpy as np
 
 class research_dir():
-    def __init__(self,proj_name='test',path=None,path_name_book='path_name_dir.csv'):
+    def __init__(self,proj_name=None, path=None,build_from_input=False, path_name_book='path_name_dir.csv'):
         '''
         :param path: optional, the path you want to create your project
         '''
-        self.proj_name = proj_name
+        if proj_name:
+            self.proj_name = proj_name
+        else:
+            if build_from_input:
+                confirm_proj_name = 'n'
+                while confirm_proj_name == 'n':
+                    self.proj_name = str(input('enter project name:'))
+                    if self.proj_name == '':
+                        print('Please enter a string')
+                        continue
+                    confirm_proj_name = input('confim? if not press \'n\' and \'enter\'')
+            else:
+                self.proj_name = 'test'
+        
         self.path_name_book = path_name_book
         
         if path:
-            self.proj_path = path
+            self.proj_path = os.path.join(path, self.proj_name)
         else:
-            self.proj_path = os.path.join(os.path.abspath(os.path.join(os.path.abspath(os.path.dirname('__file__')),'..')),proj_name)
+            self.proj_path = os.path.join(os.path.abspath(os.path.join(os.path.abspath(os.path.dirname('__file__')),'..')),self.proj_name)
          
     def show_dir(self, path=None, depth=0):
         '''
@@ -81,16 +94,11 @@ class research_dir():
             self.create_path(i)
     
     def build_proj_path_from_input(self):
-        if self.proj_name=='test':
-            confirm_proj_name = 'n'
-            while confirm_proj_name == 'n':
-                proj_name = input('enter project name:')
-                confirm_proj_name = input('confim? if not press \'n\' and \'enter\'')
         self.create_path_from_list(path_name_list=self.read_name_book_to_list())
         self.show_dir()
         print('project dir created')
         input()
         
 if __name__ == "__main__":
-    research = research_dir()
+    research = research_dir(build_from_input=True)
     research.build_proj_path_from_input()
